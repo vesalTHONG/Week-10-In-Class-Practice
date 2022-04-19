@@ -54,7 +54,7 @@ while True:
 
         register_breed = int(
             input(f"\nenter menu number 1 -> {len(breeds)}: "))
-        cat_breed = ''
+        cat_breed = breeds[register_breed-1]
 
         cat_dob = input(
             f"\nEnter {'her' if cat_gender == 'f' else 'his'} date of birth (yyyy-mm-dd): ")
