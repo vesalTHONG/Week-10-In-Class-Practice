@@ -78,6 +78,7 @@ def update_cat(cat_info):
     sql = f"UPDATE cats SET name = '{name}', gender = '{gender}', breed = '{breed}', dob ='{dob}',desciption = '{description}' Where id = '{id}' "
     cursor.execute(sql)
     mydb.commit()
+    print("Successfully updated")
 
 
 def remove_cat(id):
@@ -88,4 +89,4 @@ def remove_cat(id):
     sql = f"DELETE FROM cats WHERE id = '{id}' "
     cursor.execute(sql)
     mydb.commit()
-
+    print("Successfully removed")
