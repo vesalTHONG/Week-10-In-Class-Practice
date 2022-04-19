@@ -83,7 +83,4 @@ def remove_cat(id):
     TODO:
     this function will remove record from cat table base on id parameter.
     '''
-    sql = f"DELETE FROM cats WHERE id = '{id}' "
-    cursor.execute(sql)
-    mydb.commit()
-    print("Successfully removed")
+
