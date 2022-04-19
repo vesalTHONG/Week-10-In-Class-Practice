@@ -20,7 +20,7 @@ mydb = mysql.connector.connect(
     database="cat_db",
     port="3306"
 )
-# print(mydb)
+
 
 cursor = mydb.cursor()
 
@@ -38,10 +38,6 @@ def register_cat(cat_info):
 
 
 
-test = ["rose", "f", "Siberian", "2020-03-08", "smart one"]
-# register_cat(test)
-
-
 def get_cats():
     '''
     TODO:
@@ -52,8 +48,6 @@ def get_cats():
     myresult = cursor.fetchall()
     return myresult
 
-
-# get_cats()
 
 
 def get_cat(id):
@@ -76,7 +70,7 @@ def update_cat(cat_info):
     an update record for specific cat information where equal to cat_info[0]
     '''
     id, name, gender, breed, dob, description = cat_info
-    sql = f"UPDATE cats SET name = '{name}', gender = '{gender}', breed = '{breed}', dob ='{dob}',desciption = '{description}' Where id = '{id}' "
+    sql = f"UPDATE cats SET name = '{name}', gender = '{gender}', breed = '{breed}', dob ='{dob}',description = '{description}' Where id = '{id}' "
     cursor.execute(sql)
     mydb.commit()
     print("Successfully updated")
