@@ -6,7 +6,6 @@ ex: 1.
 
 '''
 
-
 # TODO:
 # host can be 'localhost' or '127.0.0.1'
 # if you are using mamp, password is root
@@ -16,10 +15,10 @@ mydb = mysql.connector.connect(
     host="localhost",
     user="root",
     password="",
-    database="",
+    database="cat_db",
     port="3306"
 )
-
+# print(mydb)
 
 cursor = mydb.cursor()
 
@@ -30,7 +29,14 @@ def register_cat(cat_info):
     cat_info is in a form of list ex: ["rose", "f", "Siberian", "2020-03-08", "smart one"], that register_cat function will insert the provided
     list to cats table as an insert record.
     '''
-    pass
+    sql = "INSERT INTO cats (name, gender, breed, dob, description) VALUES (%s, %s, %s, %s, %s)"
+    cursor.execute(sql, cat_info)
+    mydb.commit()
+    print("Register completed")
+
+
+test = ["rose", "f", "Siberian", "2020-03-08", "smart one"]
+# register_cat(test)
 
 
 def get_cats():
@@ -38,7 +44,13 @@ def get_cats():
     TODO:
     this function will get all cat from cats table 
     '''
-    pass
+    sql = "SELECT * FROM cats"
+    cursor.execute(sql)
+    myresult = cursor.fetchall()
+    return myresult
+
+
+# get_cats()
 
 
 def get_cat(id):
@@ -46,8 +58,13 @@ def get_cat(id):
     TODO:
     this function will get a single cat data from cat table base on the id parameter
     '''
-    pass
+    sql = f"SELECT * FROM cats WHERE {id}"
+    cursor.execute(sql)
+    result = cursor.fetchone()
+    return result
 
+
+# print(get_cat(5))
 
 def update_cat(cat_info):
     '''
@@ -55,7 +72,10 @@ def update_cat(cat_info):
     cat_info is in a form of list ex: [1,"rose", "f", "Siberian", "2020-03-08", "smart one"], that update_cat function will use as 
     an update record for specific cat information where equal to cat_info[0]
     '''
-    pass
+    id, name, gender, breed, dob, description = cat_info
+    sql = f"UPDATE cats SET name = '{name}', gender = '{gender}', breed = '{breed}', dob ='{dob}',desciption = '{description}' Where id = '{id}' "
+    cursor.execute(sql)
+    mydb.commit()
 
 
 def remove_cat(id):
@@ -63,4 +83,7 @@ def remove_cat(id):
     TODO:
     this function will remove record from cat table base on id parameter.
     '''
-    pass
+    sql = f"DELETE FROM cats WHERE id = '{id}' "
+    cursor.execute(sql)
+    mydb.commit()
+
