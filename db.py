@@ -76,7 +76,7 @@ def update_cat(cat_info):
     an update record for specific cat information where equal to cat_info[0]
     '''
     id, name, gender, breed, dob, description = cat_info
-    sql = f"UPDATE cats SET name = '{name}', gender = '{gender}', breed = '{breed}', dob ='{dob}',desciption = '{description}' Where id = '{id}' "
+    sql = f"UPDATE cats SET name = '{name}', gender = '{gender}', breed = '{breed}', dob ='{dob}',description = '{description}' Where id = '{id}' "
     cursor.execute(sql)
     mydb.commit()
     print("Successfully updated")
