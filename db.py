@@ -2,7 +2,9 @@ import mysql.connector
 
 '''
 State your group member name and id here:
-ex: 1. 
+1. 2022103thol - Thol Ucca Kool
+2. 2021093 - Thong Ratanak Vesal
+3. 2022205 - Sopheanita Rit
 
 '''
 
