@@ -42,7 +42,8 @@ while True:
         if register_name == "1":
             # TODO:
             # generate random cat name using getname library
-            pass
+            cat_name = random_name('cat')
+            print(f"Your cat name is {cat_name}")
 
         elif register_name == "2":
             cat_name = input("\nEnter cat name: ")
@@ -68,6 +69,11 @@ while True:
         all_cat = get_cats()
         # TODO:
         # display all cat information in a table format using PrettyTable library
+        table = PrettyTable()
+        table.field_names = ["ID", "Name", "Gender", "Breed", "DOB", "Description"]
+        table.add_rows(all_cat)
+        print(table.get_string())
+    # return table.get_string()
 
     elif menu_one_input == "3":
 
