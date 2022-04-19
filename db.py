@@ -31,10 +31,7 @@ def register_cat(cat_info):
     cat_info is in a form of list ex: ["rose", "f", "Siberian", "2020-03-08", "smart one"], that register_cat function will insert the provided
     list to cats table as an insert record.
     '''
-    sql = "INSERT INTO cats (name, gender, breed, dob, description) VALUES (%s, %s, %s, %s, %s)"
-    cursor.execute(sql, cat_info)
-    mydb.commit()
-    print("Register completed")
+
 
 
 test = ["rose", "f", "Siberian", "2020-03-08", "smart one"]
