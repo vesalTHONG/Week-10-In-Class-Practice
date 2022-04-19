@@ -3,8 +3,8 @@ import mysql.connector
 '''
 State your group member name and id here:
 1. 2022103thol - Thol Ucca Kool
-2. 2021093 - Thong Ratanak Vesal
-3. 2022205 - Sopheanita Rit
+2. 2021093thong - Thong Ratanak Vesal
+3. 2022205rit - Sopheanita Rit
 
 '''
 
