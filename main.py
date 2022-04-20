@@ -66,13 +66,16 @@ while True:
             print("Invalid input. Start over.")
             continue
         display_breed()
-
-        register_breed = int(
-            input(f"\nenter menu number 1 -> {len(breeds)}: "))
-        if register_breed > len(breeds):
+        try:
+            register_breed = int(
+                input(f"\nenter menu number 1 -> {len(breeds)}: "))
+            if register_breed > len(breeds):
+                print("Invalid input. Start over.")
+                continue
+            cat_breed = breeds[register_breed-1]
+        except ValueError:
             print("Invalid input. Start over.")
             continue
-        cat_breed = breeds[register_breed-1]
 
         cat_dob = input(
             f"\nEnter {'her' if cat_gender == 'f' else 'his'} date of birth (yyyy-mm-dd): ")
