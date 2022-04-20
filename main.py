@@ -30,22 +30,14 @@ menu_2 = '''\nCat Name
 '''
 while True:
     print(menu_1)
+
     menu_one_input = input("enter menu number 1 -> 5: ")
-    try:
-        if int(menu_one_input) <= 0 or int(menu_one_input) > 5:
-            print("Invalid input")
-    except ValueError:
-        print("Please input integer only")
-        continue
 
     if menu_one_input == "1":
 
         print(menu_2)
 
         register_name = input("enter menu number 1 -> 2: ")
-        if int(register_name) != 1 and int(register_name) != 2:
-            print("Invalid Input")
-            continue
 
         if register_name == "1":
             # TODO:
@@ -57,18 +49,12 @@ while True:
             cat_name = input("\nEnter cat name: ")
 
         cat_gender = input("\nCat gender (m/f): ")
-        if cat_gender != "m" and cat_gender != "f":
-            print("Invalid input. Start over.")
-            continue
 
         display_breed()
 
         register_breed = int(
             input(f"\nenter menu number 1 -> {len(breeds)}: "))
-        if register_breed > len(breeds):
-            print("Invalid input, Start over.")
-            continue
-        cat_breed = breeds[register_breed-1]
+        cat_breed = ''
 
         cat_dob = input(
             f"\nEnter {'her' if cat_gender == 'f' else 'his'} date of birth (yyyy-mm-dd): ")
